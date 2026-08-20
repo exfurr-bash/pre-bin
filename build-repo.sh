@@ -91,21 +91,20 @@ write_release() {
         echo "Description: Repositorio APT $REPO_NAME (Termux)"
         echo "Date: $now"
         echo "MD5Sum:"
-        find "$ROOT" -type f -printf '%p\0' | sort -z | while IFS= read -r -d '' f; do
-            printf ' %s %s %s\n' "$(md5sum "$f" | cut -d' ' -f1)" "$(stat -c %s "$f")" "${f#./}"
+        find "$ROOT" -type f -printf 'main/%P\0' | sort -z | while IFS= read -r -d '' f; do
+            printf ' %s %s %s\n' "$(md5sum "$ROOT/${f#main/}" | cut -d' ' -f1)" "$(stat -c %s "$ROOT/${f#main/}")" "$f"
         done
         echo "SHA1:"
-        find "$ROOT" -type f -printf '%p\0' | sort -z | while IFS= read -r -d '' f; do
-            printf ' %s %s %s\n' "$(sha1sum "$f" | cut -d' ' -f1)" "$(stat -c %s "$f")" "${f#./}"
+        find "$ROOT" -type f -printf 'main/%P\0' | sort -z | while IFS= read -r -d '' f; do
+            printf ' %s %s %s\n' "$(sha1sum "$ROOT/${f#main/}" | cut -d' ' -f1)" "$(stat -c %s "$ROOT/${f#main/}")" "$f"
         done
         echo "SHA256:"
-        find "$ROOT" -type f -printf '%p\0' | sort -z | while IFS= read -r -d '' f; do
-            printf ' %s %s %s\n' "$(sha256sum "$f" | cut -d' ' -f1)" "$(stat -c %s "$f")" "${f#./}"
+        find "$ROOT" -type f -printf 'main/%P\0' | sort -z | while IFS= read -r -d '' f; do
+            printf ' %s %s %s\n' "$(sha256sum "$ROOT/${f#main/}" | cut -d' ' -f1)" "$(stat -c %s "$ROOT/${f#main/}")" "$f"
         done
     } > "$file"
 }
 
-write_release "$ROOT/Release"
 write_release "$DISTS/Release"
 
 echo "Repositorio atualizado em $DISTS"
