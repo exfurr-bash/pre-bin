@@ -3,19 +3,19 @@ Label: pre-bin
 Suite: stable
 Codename: stable
 Version: 1.0
-Architectures: all
+Architectures: aarch64
 Components: main
 Description: Repositorio APT pre-bin (Termux)
-Date: Thu, 20 Aug 2026 04:23:11 +0000
+Date: Thu, 20 Aug 2026 04:27:30 +0000
 MD5Sum:
- d41d8cd98f00b204e9800998ecf8427e 0 dists/stable/main/binary-all/Packages
- 0b58f0710e631cd15e8f04b50906534b 20 dists/stable/main/binary-all/Packages.gz
- 6d82bdcb8331502953dbb9182b27d36a 355 dists/stable/main/Release
+ 7da80923ecd1c747643184ecd9f0b097 876 dists/stable/main/binary-aarch64/Packages
+ 1ea89c51a087c32b255f001e7c65df1e 508 dists/stable/main/binary-aarch64/Packages.gz
+ 180838d0cbe0ceb77beaf6ec41f63d35 370 dists/stable/main/Release
 SHA1:
- da39a3ee5e6b4b0d3255bfef95601890afd80709 0 dists/stable/main/binary-all/Packages
- f119135d8679886f8619b74e2ed4714f5a8035e0 20 dists/stable/main/binary-all/Packages.gz
- fde2f6e158db843d1d3c941a970860c891ec9865 593 dists/stable/main/Release
+ 62dbc622dcd445376a999745ad5e10e707733bd7 876 dists/stable/main/binary-aarch64/Packages
+ c93dc6b31cd1b8e0af728b076250ffd4a5dafd65 508 dists/stable/main/binary-aarch64/Packages.gz
+ f8cd4641a9d742ec0cbcd3192897d13f40b32289 619 dists/stable/main/Release
 SHA256:
- e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 dists/stable/main/binary-all/Packages
- 15fd5fde614707266ba3faf4012a8a62aa0d92f135a6c29cb21abf0746e5e815 20 dists/stable/main/binary-all/Packages.gz
- d52ded4e5cb1e81424c206bdd9f94f63b3182a2097937078593319a6812b579a 889 dists/stable/main/Release
+ 9e54691fd5b1c437abe58557109efec5611e09b58ef50e63eed2ffe1faabae82 876 dists/stable/main/binary-aarch64/Packages
+ 3a273d3aeccbf25fed7328d0924d9495255104e6fd079f0d09dc3ffe6ceb83b1 508 dists/stable/main/binary-aarch64/Packages.gz
+ 2e5b467deda672b1627ddc87ebcffd6c3577221a24c5a0e392efea2cf10d3144 926 dists/stable/main/Release

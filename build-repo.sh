@@ -37,6 +37,15 @@ for a in "${!archs[@]}"; do
 done
 echo "Arquiteturas: $arch_list"
 
+for old in "$ROOT"/binary-*; do
+    [ -d "$old" ] || continue
+    base=$(basename "$old")
+    if ! grep -qw "${base#binary-}" <<<"$arch_list"; then
+        rm -rf "$old"
+        echo "Removido diretorio obsoleto: $old"
+    fi
+done
+
 for a in "${!archs[@]}"; do
     bindir="$ROOT/binary-$a"
     mkdir -p "$bindir"
