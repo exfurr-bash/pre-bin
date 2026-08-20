@@ -1,16 +1,3 @@
-Package: ocaml-static
-Version: 5.5.0
-Maintainer: @termux
-Depends: ocaml (= 5.5.0)
-Installed-Size: 66649
-Description: Static libraries for ocaml
-Homepage: https://ocaml.org
-Filename: pool/main/ocaml-static/ocaml-static_5.5.0_aarch64.deb
-Size: 7746684
-MD5sum: 938ee9637231ee46d82a49dfb968554a
-SHA1: e7577b425f65cfc7fdb3060b824f56ba29dc0338
-SHA256: b2fe54bf2ed73d9122cd543dde3caa5e96d6ed8a95740d346b1082d57c8768fc
-
 Package: ocaml
 Version: 5.5.0
 Maintainer: @termux
@@ -23,4 +10,17 @@ Size: 85512388
 MD5sum: 1a0110440478d3fd66635eccf80a4646
 SHA1: 8ba75d05c547814b52d75d16e26694ebeb5e6690
 SHA256: 20b586fbcb544e42ccca379fc450689facae722615d4359424b9aabe798b6dc8
+
+Package: ocaml-static
+Version: 5.5.0
+Maintainer: @termux
+Depends: ocaml (= 5.5.0)
+Installed-Size: 66649
+Description: Static libraries for ocaml
+Homepage: https://ocaml.org
+Filename: pool/main/ocaml-static/ocaml-static_5.5.0_aarch64.deb
+Size: 7746684
+MD5sum: 938ee9637231ee46d82a49dfb968554a
+SHA1: e7577b425f65cfc7fdb3060b824f56ba29dc0338
+SHA256: b2fe54bf2ed73d9122cd543dde3caa5e96d6ed8a95740d346b1082d57c8768fc
 

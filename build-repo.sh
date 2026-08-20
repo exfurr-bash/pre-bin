@@ -8,9 +8,6 @@ POOL="pool"
 DISTS="dists/$SUITE"
 ROOT="$DISTS/$COMPONENT"
 REPO_NAME="pre-bin"
-REPO_URL="https://exfurr-bash.github.io/pre-bin"
-KEYRING="${GPG_KEYRING:-keys}"
-KEY_ID="${GPG_KEY_ID:-pre-bin@localhost}"
 
 mkdir -p "$ROOT"
 
@@ -80,68 +77,35 @@ fi
 
 pool_commit=$(git log -1 --format='%cI' -- "$POOL" 2>/dev/null || true)
 now=$(date -d "$pool_commit" -Ru 2>/dev/null || date -Ru)
-release_core="$ROOT/Release"
-{
-    echo "Origin: $REPO_NAME"
-    echo "Label: $REPO_NAME"
-    echo "Suite: $SUITE"
-    echo "Codename: $SUITE"
-    echo "Version: 1.0"
-    echo "Architectures: $arch_list"
-    echo "Components: $COMPONENT"
-    echo "Description: Repositorio APT $REPO_NAME (Termux)"
-    echo "Date: $now"
-} > "$release_core"
 
-hash_entries() {
-    local alg="$1" field="$2" hashcmd="$3"
-    echo "$field:" >> "$release_core"
-    find "$ROOT" -type f -printf '%p\0' | sort -z | while IFS= read -r -d '' f; do
-        sum=$("$hashcmd" "$f" | cut -d' ' -f1)
-        size=$(stat -c %s "$f")
-        printf ' %s %s %s\n' "$sum" "$size" "${f#./}"
-    done >> "$release_core"
+write_release() {
+    local file="$1"
+    {
+        echo "Origin: $REPO_NAME"
+        echo "Label: $REPO_NAME"
+        echo "Suite: $SUITE"
+        echo "Codename: $SUITE"
+        echo "Version: 1.0"
+        echo "Architectures: $arch_list"
+        echo "Components: $COMPONENT"
+        echo "Description: Repositorio APT $REPO_NAME (Termux)"
+        echo "Date: $now"
+        echo "MD5Sum:"
+        find "$ROOT" -type f -printf '%p\0' | sort -z | while IFS= read -r -d '' f; do
+            printf ' %s %s %s\n' "$(md5sum "$f" | cut -d' ' -f1)" "$(stat -c %s "$f")" "${f#./}"
+        done
+        echo "SHA1:"
+        find "$ROOT" -type f -printf '%p\0' | sort -z | while IFS= read -r -d '' f; do
+            printf ' %s %s %s\n' "$(sha1sum "$f" | cut -d' ' -f1)" "$(stat -c %s "$f")" "${f#./}"
+        done
+        echo "SHA256:"
+        find "$ROOT" -type f -printf '%p\0' | sort -z | while IFS= read -r -d '' f; do
+            printf ' %s %s %s\n' "$(sha256sum "$f" | cut -d' ' -f1)" "$(stat -c %s "$f")" "${f#./}"
+        done
+    } > "$file"
 }
 
-hash_entries md5 MD5Sum md5sum
-hash_entries sha1 SHA1 sha1sum
-hash_entries sha256 SHA256 sha256sum
+write_release "$ROOT/Release"
+write_release "$DISTS/Release"
 
-release="$DISTS/Release"
-{
-    echo "Origin: $REPO_NAME"
-    echo "Label: $REPO_NAME"
-    echo "Suite: $SUITE"
-    echo "Codename: $SUITE"
-    echo "Version: 1.0"
-    echo "Architectures: $arch_list"
-    echo "Components: $COMPONENT"
-    echo "Description: Repositorio APT $REPO_NAME (Termux)"
-    echo "Date: $now"
-} > "$release"
-
-hash_root_entries() {
-    local alg="$1" field="$2" hashcmd="$3"
-    echo "$field:" >> "$release"
-    find "$ROOT" -type f -printf '%p\0' | sort -z | while IFS= read -r -d '' f; do
-        sum=$("$hashcmd" "$f" | cut -d' ' -f1)
-        size=$(stat -c %s "$f")
-        printf ' %s %s %s\n' "$sum" "$size" "${f#./}"
-    done >> "$release"
-}
-
-hash_root_entries md5 MD5Sum md5sum
-hash_root_entries sha1 SHA1 sha1sum
-hash_root_entries sha256 SHA256 sha256sum
-
-if gpg --homedir "$KEYRING" --list-secret-keys "$KEY_ID" >/dev/null 2>&1; then
-    rm -f "$DISTS/InRelease" "$DISTS/Release.gpg"
-    gpg --homedir "$KEYRING" --batch --pinentry-mode loopback --passphrase '' --clearsign -o "$DISTS/InRelease" "$release"
-    gpg --homedir "$KEYRING" --batch --pinentry-mode loopback --passphrase '' --detach-sign -o "$DISTS/Release.gpg" "$release"
-    echo "InRelease assinado com $KEY_ID"
-else
-    echo "AVISO: chave privada nao encontrada em $KEYRING - InRelease/Release.gpg nao gerados."
-    echo "Clientes precisarao usar [trusted=yes] ou --allow-untrusted."
-fi
-
-echo "Repositorio atualizado em $DISTS (URL: $REPO_URL $SUITE $COMPONENT)"
+echo "Repositorio atualizado em $DISTS"

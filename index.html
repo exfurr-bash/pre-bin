@@ -14,30 +14,18 @@
 </head>
 <body>
 <h1>pre-bin</h1>
-<p>Repositorio APT para <strong>Termux</strong>, hospedado no GitHub Pages. Sem necessidade de root.</p>
+<p>Repositorio APT para <strong>Termux</strong>, hospedado no GitHub Pages.</p>
 
 <h2>Instalacao</h2>
 <pre>curl -fsSL https://exfurr-bash.github.io/pre-bin/add-repo.sh | sh
-apt install &lt;pacote&gt;   # ou: pkg install &lt;pacote&gt;</pre>
-<p>O script instala <code>curl</code>/<code>gnupg</code> se faltarem, baixa a chave publica e adiciona o source em <code>$PREFIX/etc/apt/sources.list.d/</code>.</p>
+apt install &lt;pacote&gt;</pre>
 
-<h2>Instalacao manual (passo a passo)</h2>
-<pre>mkdir -p $PREFIX/etc/apt/keyrings
-curl -fsSL https://exfurr-bash.github.io/pre-bin/repo.asc -o $PREFIX/etc/apt/keyrings/pre-bin.gpg
-echo "deb [signed-by=$PREFIX/etc/apt/keyrings/pre-bin.gpg] https://exfurr-bash.github.io/pre-bin stable main" &gt; $PREFIX/etc/apt/sources.list.d/pre-bin.list
-apt update</pre>
-
-<h2>Verificacao da chave</h2>
-<p>Confira a fingerprint antes de confiar:</p>
-<pre>gpg --show-keys $PREFIX/etc/apt/keyrings/pre-bin.gpg</pre>
-
-<h2>Sem assinatura (fallback)</h2>
-<p>Apenas se o repositorio foi publicado sem <code>InRelease</code> (chave privada ausente no CI):</p>
+<h2>Manual</h2>
 <pre>echo "deb [trusted=yes] https://exfurr-bash.github.io/pre-bin stable main" &gt; $PREFIX/etc/apt/sources.list.d/pre-bin.list
 apt update</pre>
 
 <footer>
-<p><a href="https://github.com/exfurr-bash/pre-bin">Codigo-fonte no GitHub</a> &middot; <a href="dists/stable/InRelease">InRelease</a></p>
+<p><a href="https://github.com/exfurr-bash/pre-bin">Codigo-fonte no GitHub</a></p>
 </footer>
 </body>
 </html>
