@@ -1,4 +1,5 @@
 Package: ocaml
+Architecture: aarch64
 Version: 5.5.0
 Maintainer: @termux
 Depends: ncurses, zlib, clang, binutils, libandroid-shmem
@@ -12,6 +13,7 @@ SHA1: 8ba75d05c547814b52d75d16e26694ebeb5e6690
 SHA256: 20b586fbcb544e42ccca379fc450689facae722615d4359424b9aabe798b6dc8
 
 Package: ocaml-static
+Architecture: aarch64
 Version: 5.5.0
 Maintainer: @termux
 Depends: ocaml (= 5.5.0)

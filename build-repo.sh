@@ -52,9 +52,10 @@ for a in "${!archs[@]}"; do
     for deb in ${pkg_index[$a]:-}; do
         {
             echo "Package: $(dpkg-deb -f "$deb" Package)"
-            for field in Version Architecture Maintainer Depends Conflicts Provides Replaces Recommends Suggests Section Priority Installed-Size Description Homepage; do
+            echo "Architecture: $a"
+            for field in Version Maintainer Depends Conflicts Provides Replaces Recommends Suggests Section Priority Installed-Size Description Homepage; do
                 value=$(dpkg-deb -f "$deb" "$field")
-                if [ -n "$value" ] && [ "$field" != "Package" ] && [ "$field" != "Architecture" ]; then
+                if [ -n "$value" ]; then
                     echo "$field: $value"
                 fi
             done
