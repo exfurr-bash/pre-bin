@@ -3,6 +3,10 @@ name: update-repo
 on:
   push:
     branches: [main]
+    paths:
+      - 'pool/**'
+      - 'build-repo.sh'
+      - '.github/workflows/update-repo.yml'
   workflow_dispatch:
 
 permissions:

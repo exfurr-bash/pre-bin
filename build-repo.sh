@@ -78,7 +78,8 @@ if [ "$allpkgs" -eq 0 ]; then
     echo "AVISO: nenhum package index gerado (pool vazio)."
 fi
 
-now=$(date -Ru)
+pool_commit=$(git log -1 --format='%cI' -- "$POOL" 2>/dev/null || true)
+now=$(date -d "$pool_commit" -Ru 2>/dev/null || date -Ru)
 release_core="$ROOT/Release"
 {
     echo "Origin: $REPO_NAME"
