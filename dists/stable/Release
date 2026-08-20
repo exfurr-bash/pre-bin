@@ -1,0 +1,21 @@
+Origin: pre-bin
+Label: pre-bin
+Suite: stable
+Codename: stable
+Version: 1.0
+Architectures: all
+Components: main
+Description: Repositorio APT pre-bin
+Date: Thu, 20 Aug 2026 04:07:44 +0000
+MD5Sum:
+ d41d8cd98f00b204e9800998ecf8427e 0 dists/stable/main/binary-all/Packages
+ e7018e5ee1932a6b302a3664b306dabe 20 dists/stable/main/binary-all/Packages.gz
+ a5b844d3bf77642726be5c8a25462918 976 dists/stable/main/Release
+SHA1:
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 dists/stable/main/binary-all/Packages
+ 33fa66e82b22032390d3ad8e45d7b927119e9551 20 dists/stable/main/binary-all/Packages.gz
+ 04caa274504a6014c952984958664683ceeda071 976 dists/stable/main/Release
+SHA256:
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 dists/stable/main/binary-all/Packages
+ 962ee49c55bbf2ae15fbbf5fa322e076b10274885bada35aadf6c9a6dd112832 20 dists/stable/main/binary-all/Packages.gz
+ 0833e9372d60d3e51181a83cc408e7de6f9ac7a020ba8ed3fe20b881650789cf 976 dists/stable/main/Release

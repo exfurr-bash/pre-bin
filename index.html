@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pre-bin - Repositorio APT</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
+  pre { background: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+  code { background: rgba(127,127,127,.15); padding: .15em .4em; border-radius: 4px; }
+  a { color: #58a6ff; }
+</style>
+</head>
+<body>
+<h1>pre-bin</h1>
+<p>Repositorio APT hospedado no GitHub Pages.</p>
+
+<h2>Instalacao manual</h2>
+<pre>curl -fsSL https://exfurr-bash.github.io/pre-bin/add-repo.sh | sudo sh
+apt update</pre>
+
+<h2>Instalacao passo a passo</h2>
+<pre>sudo mkdir -p /etc/apt/keyrings
+sudo curl -fsSL https://exfurr-bash.github.io/pre-bin/repo.asc -o /etc/apt/keyrings/pre-bin.gpg
+echo "deb [signed-by=/etc/apt/keyrings/pre-bin.gpg] https://exfurr-bash.github.io/pre-bin stable main" | sudo tee /etc/apt/sources.list.d/pre-bin.list
+sudo apt update</pre>
+
+<h2>Verificacao da chave</h2>
+<p>Ou verifique a fingerprint da chave publica antes de confiar:</p>
+<pre>gpg --show-keys /etc/apt/keyrings/pre-bin.gpg</pre>
+
+<footer>
+<p><a href="https://github.com/exfurr-bash/pre-bin">Codigo-fonte no GitHub</a> &middot; <a href="dists/stable/InRelease">InRelease</a></p>
+</footer>
+</body>
+</html>

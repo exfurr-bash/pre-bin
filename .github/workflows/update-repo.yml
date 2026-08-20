@@ -1,0 +1,52 @@
+name: update-repo
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup GNUPGHOME
+        run: |
+          if [ -n "${{ secrets.GPG_SIGNING_KEY }}" ]; then
+            echo "${{ secrets.GPG_SIGNING_KEY }}" | base64 -d > /tmp/signing.key
+            gpg --batch --import /tmp/signing.key
+            gpg_config=$(gpg --list-secret-keys --with-colons | awk -F: '/^sec:/ {print $5; exit}')
+            for f in /tmp/signing.key; do rm -f "$f"; done
+            echo "GPG secret key imported (${gpg_config:0:8}...)"
+          else
+            echo "GPG_SIGNING_KEY nao configurada - repostas serao geradas sem assinatura"
+          fi
+
+      - name: Build repo
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gnupg dpkg-dev
+          if [ -n "${{ secrets.GPG_SIGNING_KEY }}" ]; then
+            export GPG_KEYRING="$HOME/.gnupg"
+            export GPG_KEY_ID="${GPG_KEY_ID:-pre-bin@localhost}"
+          fi
+          bash build-repo.sh
+
+      - name: Commit generated files
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteracao - nada a commitar"
+          else
+            git commit -m "rebuild: atualizar indice do repositorio apt"
+            git pull --no-edit --rebase=false origin main
+            git push
+            echo "Alteracoes commitadas e enviadas"
+          fi
