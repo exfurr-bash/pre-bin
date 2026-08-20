@@ -79,7 +79,7 @@ release_core="$ROOT/Release"
     echo "Version: 1.0"
     echo "Architectures: $arch_list"
     echo "Components: $COMPONENT"
-    echo "Description: Repositorio APT $REPO_NAME"
+    echo "Description: Repositorio APT $REPO_NAME (Termux)"
     echo "Date: $now"
 } > "$release_core"
 
@@ -106,7 +106,7 @@ release="$DISTS/Release"
     echo "Version: 1.0"
     echo "Architectures: $arch_list"
     echo "Components: $COMPONENT"
-    echo "Description: Repositorio APT $REPO_NAME"
+    echo "Description: Repositorio APT $REPO_NAME (Termux)"
     echo "Date: $now"
 } > "$release"
 
@@ -125,6 +125,7 @@ hash_root_entries sha1 SHA1 sha1sum
 hash_root_entries sha256 SHA256 sha256sum
 
 if gpg --homedir "$KEYRING" --list-secret-keys "$KEY_ID" >/dev/null 2>&1; then
+    rm -f "$DISTS/InRelease" "$DISTS/Release.gpg"
     gpg --homedir "$KEYRING" --batch --pinentry-mode loopback --passphrase '' --clearsign -o "$DISTS/InRelease" "$release"
     gpg --homedir "$KEYRING" --batch --pinentry-mode loopback --passphrase '' --detach-sign -o "$DISTS/Release.gpg" "$release"
     echo "InRelease assinado com $KEY_ID"
