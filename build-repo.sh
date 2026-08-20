@@ -108,4 +108,14 @@ write_release() {
 
 write_release "$DISTS/Release"
 
+if gpg --homedir keys --list-secret-keys pre-bin@localhost >/dev/null 2>&1; then
+    rm -f "$DISTS/InRelease"
+    gpg --homedir keys --batch --pinentry-mode loopback --passphrase '' \
+        --clearsign -o "$DISTS/InRelease" "$DISTS/Release"
+    echo "Release assinado -> $DISTS/InRelease"
+else
+    echo "AVISO: chave privada nao encontrada em keys/ - repo gerado SEM assinatura."
+    echo "Clientes precisarao de [trusted=yes]."
+fi
+
 echo "Repositorio atualizado em $DISTS"

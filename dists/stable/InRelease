@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Origin: pre-bin
 Label: pre-bin
 Suite: stable
@@ -16,3 +19,11 @@ SHA1:
 SHA256:
  55f31725d40fbe2d647a9dcf96d3a5aea4c8858563a3f2f2f1ccf93ead3de976 920 main/binary-aarch64/Packages
  2920f36111a74c7dda897436ab5841b5914d41b8bc3c0a824346ec2de52d6a03 519 main/binary-aarch64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iJEEARYKADkWIQRtOn8rO02WG6HKJd+w48+fI1SkWgUCaodzBBsUgAAAAAAEAA5t
+YW51MiwyLjUrMS4xMiwzLDIACgkQsOPPnyNUpFp+pAEAzBlVWsDCnGLjB1J4+O5P
+ay71Pbbf3SkeGo8CLWBcqg4BALRmwA/GrGuOAj9kgFGViIpWYNO9butq6Ezo+stv
+f/sC
+=rlL+
+-----END PGP SIGNATURE-----

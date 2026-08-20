@@ -21,8 +21,10 @@
 apt install &lt;pacote&gt;</pre>
 
 <h2>Manual</h2>
-<pre>echo "deb [trusted=yes] https://exfurr-bash.github.io/pre-bin stable main" &gt; $PREFIX/etc/apt/sources.list.d/pre-bin.list
+<pre>curl -fsSL https://exfurr-bash.github.io/pre-bin/repo.asc -o $PREFIX/etc/apt/pre-bin.asc
+echo "deb [signed-by=$PREFIX/etc/apt/pre-bin.asc] https://exfurr-bash.github.io/pre-bin stable main" &gt; $PREFIX/etc/apt/sources.list.d/pre-bin.list
 apt update</pre>
+<p>Fingerprint: <code>6D3A7F2B3B4D961BA1CA25DFB0E3CF9F2354A45A</code></p>
 
 <footer>
 <p><a href="https://github.com/exfurr-bash/pre-bin">Codigo-fonte no GitHub</a></p>
