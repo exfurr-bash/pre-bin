@@ -1,25 +1,21 @@
-# TESTING-REPO
+# pre-bin
 
-«⚠️ Notice: Artificial intelligence is used in the development and maintenance of this repository.»
+Unofficial APT repository for Termux with OCaml packages. Hosted on GitHub Pages and GPG-signed.
 
-Unofficial and unstable packages for Termux, hosted on GitHub Pages and GPG-signed.
+## Install
 
-# Install
-
-Automatic
-```
+```sh
 curl -fsSL https://exfurr-bash.github.io/pre-bin/add-repo.sh | sh
+apt install ocaml
 ```
-# Manual
-```
-curl -fsSL https://exfurr-bash.github.io/pre-bin/repo.asc \
-  -o $PREFIX/etc/apt/pre-bin.asc
 
-echo "deb [signed-by=$PREFIX/etc/apt/pre-bin.asc] https://exfurr-bash.github.io/pre-bin testing main" \
-  > $PREFIX/etc/apt/sources.list.d/pre-bin.list
+Manual way:
 
+```sh
+curl -fsSL https://exfurr-bash.github.io/pre-bin/repo.asc -o $PREFIX/etc/apt/pre-bin.asc
+echo "deb [signed-by=$PREFIX/etc/apt/pre-bin.asc] https://exfurr-bash.github.io/pre-bin testing main" > $PREFIX/etc/apt/sources.list.d/pre-bin.list
 apt update
+apt install ocaml
 ```
-# Warning!!!
 
-Packages in this repository **IS** unstable or experimental. Use at your own risk.
+Key fingerprint: `6D3A7F2B3B4D961BA1CA25DFB0E3CF9F2354A45A`
