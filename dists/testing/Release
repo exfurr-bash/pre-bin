@@ -1,7 +1,7 @@
 Origin: pre-bin
 Label: pre-bin
-Suite: stable
-Codename: stable
+Suite: testing
+Codename: testing
 Version: 1.0
 Architectures: aarch64
 Components: main
@@ -9,10 +9,10 @@ Description: Repositorio APT pre-bin (Termux)
 Date: Thu, 20 Aug 2026 04:27:34 +0000
 MD5Sum:
  a89a193566a3cf176442a04fb69d9e19 920 main/binary-aarch64/Packages
- f0b6ce279cab95dca60cad58fb5e677b 519 main/binary-aarch64/Packages.gz
+ 7d042eb9bde32b9688ac774fae4a4f8b 519 main/binary-aarch64/Packages.gz
 SHA1:
  eb2ce0ef3b6e0b71dbf555c0b54e5099c2c30036 920 main/binary-aarch64/Packages
- b95b423f75b2f84793956ccf67a4326ee9b2de21 519 main/binary-aarch64/Packages.gz
+ e1954b04fac3251a1a6266727520f18ea692f19c 519 main/binary-aarch64/Packages.gz
 SHA256:
  55f31725d40fbe2d647a9dcf96d3a5aea4c8858563a3f2f2f1ccf93ead3de976 920 main/binary-aarch64/Packages
- 2920f36111a74c7dda897436ab5841b5914d41b8bc3c0a824346ec2de52d6a03 519 main/binary-aarch64/Packages.gz
+ e5d2244d9c767ab2fbcb0f198c3db3d93c67ceb50a9436c5623e631020054cdf 519 main/binary-aarch64/Packages.gz

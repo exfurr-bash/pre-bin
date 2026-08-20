@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-SUITE="stable"
+SUITE="testing"
 COMPONENT="main"
 POOL="pool"
 DISTS="dists/$SUITE"
