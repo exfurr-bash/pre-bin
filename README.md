@@ -1,17 +1,25 @@
-# TESTING-REPO
+TESTING-REPO
 
-Repositorio de pacotes não oficiais ou instaveis para Termux, hospedado no GitHub Pages e assinado com GPG.
+«⚠️ Notice: Artificial intelligence is used in the development and maintenance of this repository.»
 
-## Instalar
+Unofficial and unstable packages for Termux, hosted on GitHub Pages and GPG-signed.
 
-```sh
+Install
+
+Automatic
+
 curl -fsSL https://exfurr-bash.github.io/pre-bin/add-repo.sh | sh
-```
 
-Caminhos:
+Manual
 
-```sh
-curl -fsSL https://exfurr-bash.github.io/pre-bin/repo.asc -o $PREFIX/etc/apt/pre-bin.asc
-echo "deb [signed-by=$PREFIX/etc/apt/pre-bin.asc] https://exfurr-bash.github.io/pre-bin stable main" > $PREFIX/etc/apt/sources.list.d/pre-bin.list
+curl -fsSL https://exfurr-bash.github.io/pre-bin/repo.asc \
+  -o $PREFIX/etc/apt/pre-bin.asc
+
+echo "deb [signed-by=$PREFIX/etc/apt/pre-bin.asc] https://exfurr-bash.github.io/pre-bin stable main" \
+  > $PREFIX/etc/apt/sources.list.d/pre-bin.list
+
 apt update
-```
+
+Warning
+
+Packages in this repository may be unstable or experimental. Use at your own risk.
