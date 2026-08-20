@@ -1,4 +1,4 @@
-# UNINSTABLE-REPO
+# UNSTABLE-REPO
 
 Repositorio de pacotes não oficiais ou instaveis para Termux, hospedado no GitHub Pages e assinado com GPG.
 
