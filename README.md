@@ -1,6 +1,6 @@
 # pre-bin
 
-Repositorio APT para Termux (GitHub Pages), assinado com GPG.
+Repositorio de pacotes para **Termux**, hospedado no GitHub Pages e assinado com GPG (sem `trusted=yes`).
 
 ## Instalar
 
@@ -9,12 +9,38 @@ curl -fsSL https://exfurr-bash.github.io/pre-bin/add-repo.sh | sh
 apt install <pacote>
 ```
 
-## Adicionar pacote
+O script baixa a chave publica, adiciona o repositorio com `signed-by` e roda `apt update`.
+
+### Manual (mesma coisa)
 
 ```sh
-cp <pacote>.deb pool/main/
-bash build-repo.sh   # reindexa e assina
-git add -A && git commit -m "pkg: <pacote>" && git push
+curl -fsSL https://exfurr-bash.github.io/pre-bin/repo.asc -o $PREFIX/etc/apt/pre-bin.asc
+echo "deb [signed-by=$PREFIX/etc/apt/pre-bin.asc] https://exfurr-bash.github.io/pre-bin stable main" > $PREFIX/etc/apt/sources.list.d/pre-bin.list
+apt update
 ```
 
-Fingerprint da chave: `6D3A7F2B3B4D961BA1CA25DFB0E3CF9F2354A45A`
+### Verificar a chave
+
+```sh
+gpg --show-keys $PREFIX/etc/apt/pre-bin.asc
+```
+
+Fingerprint: `6D3A7F2B3B4D961BA1CA25DFB0E3CF9F2354A45A`
+
+## Pacotes
+
+| Pacote | Versao | Descricao |
+|---|---|---|
+| `ocaml` | 5.5.0 | Compilador, runtime e bibliotecas base do OCaml |
+| `ocaml-static` | 5.5.0 | Bibliotecas estaticas do OCaml |
+
+## Remover
+
+```sh
+rm $PREFIX/etc/apt/sources.list.d/pre-bin.list $PREFIX/etc/apt/pre-bin.asc
+apt update
+```
+
+## Colaborar
+
+Abra uma issue [aqui](https://github.com/exfurr-bash/pre-bin/issues) com a sugestao de pacote ou envie o `.deb` em [uma release](https://github.com/exfurr-bash/pre-bin/releases).
