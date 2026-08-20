@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/sh
+set -eu
 
 REPO_URL="https://exfurr-bash.github.io/pre-bin"
 PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
