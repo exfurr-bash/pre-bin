@@ -10,24 +10,36 @@
   pre { background: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 8px; overflow-x: auto; }
   code { background: rgba(127,127,127,.15); padding: .15em .4em; border-radius: 4px; }
   a { color: #58a6ff; }
+  blockquote { border-left: 3px solid #58a6ff; margin: 1rem 0; padding: 0.5rem 1rem; background: rgba(88,166,255,.08); border-radius: 0 8px 8px 0; }
 </style>
 </head>
 <body>
 <h1>pre-bin</h1>
-<p>Unofficial APT repository for <strong>Termux</strong> with OCaml packages, hosted on GitHub Pages and GPG-signed.</p>
+<p>Unofficial APT repository for <strong>Termux</strong>, hosted on GitHub Pages and GPG-signed.</p>
+<blockquote><strong>Disclaimer, with love:</strong> This is <em>not</em> an official Termux repo. It's maintained by some random on the internet (exfurr-bash) in their free time. Packages are experimental, barely tested, and might vibe-check your install into oblivion. If it breaks, bother me — not the Termux maintainers.</blockquote>
 
-<h2>Install</h2>
+<h2>Quick install (the easy way)</h2>
+<p><em>Yes, it's a <code>curl | sh</code>. We know. At least we verify the GPG key for you.</em></p>
 <pre>curl -fsSL https://exfurr-bash.github.io/pre-bin/add-repo.sh | sh
+# you'll get 3 warnings — read them, seriously
+apt install &lt;package&gt;</pre>
+<p>Options: <code>sh add-repo.sh --help</code> | <code>-y/--yes</code> skip prompts | <code>--uninstall</code> remove | <code>--no-update</code> skip apt update</p>
+
+<h2>Manual way (for the paranoid, responsible adults)</h2>
+<pre>curl -fsSL https://exfurr-bash.github.io/pre-bin/repo.asc -o $PREFIX/etc/apt/pre-bin.asc
+# verify fingerprint like a pro:
+gpg --show-keys $PREFIX/etc/apt/pre-bin.asc
+echo "deb [signed-by=$PREFIX/etc/apt/pre-bin.asc] https://exfurr-bash.github.io/pre-bin testing main" &gt; $PREFIX/etc/apt/sources.list.d/pre-bin.list
+apt update
 apt install &lt;package&gt;</pre>
 
-<h2>Manual way</h2>
-<pre>curl -fsSL https://exfurr-bash.github.io/pre-bin/repo.asc -o $PREFIX/etc/apt/pre-bin.asc
-echo "deb [signed-by=$PREFIX/etc/apt/pre-bin.asc] https://exfurr-bash.github.io/pre-bin testing main" &gt; $PREFIX/etc/apt/sources.list.d/pre-bin.list
-apt update</pre>
+<h2>Uninstall</h2>
+<pre>sh add-repo.sh --uninstall   # removes key + sources, keeps gnupg</pre>
+
 <p>Key fingerprint: <code>6D3A7F2B3B4D961BA1CA25DFB0E3CF9F2354A45A</code></p>
 
 <footer>
-<p><a href="https://github.com/exfurr-bash/pre-bin">Source on GitHub</a></p>
+<p><a href="https://github.com/exfurr-bash/pre-bin">Source on GitHub</a> — PRs welcome, blame welcome too.</p>
 </footer>
 </body>
 </html>
