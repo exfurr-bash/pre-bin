@@ -35,6 +35,6 @@ sh add-repo.sh --uninstall   # removes key + sources, keeps gnupg
 curl -O https://exfurr-bash.github.io/pre-bin/add-repo.sh && sh add-repo.sh --uninstall
 ```
 
-Key fingerprint: `6D3A7F2B3B4D961BA1CA25DFB0E3CF9F2354A45A`
+Key fingerprint: `88420AF00E0DB4F0F2CF6F1423C5FED2C9822384`
 
 Source: [github.com/exfurr-bash/pre-bin](https://github.com/exfurr-bash/pre-bin) — PRs welcome, blame welcome too.

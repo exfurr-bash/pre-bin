@@ -9,21 +9,21 @@ Version: 1.0
 Architectures: aarch64
 Components: main
 Description: Repositorio APT pre-bin (Termux)
-Date: Thu, 20 Aug 2026 04:27:34 +0000
+Date: Mon, 05 Oct 2026 12:53:44 +0000
 MD5Sum:
- a89a193566a3cf176442a04fb69d9e19 920 main/binary-aarch64/Packages
- 7d042eb9bde32b9688ac774fae4a4f8b 519 main/binary-aarch64/Packages.gz
+ bbae9fb2c524ac43b07533b59b86d8a0 3783 main/binary-aarch64/Packages
+ a604fd65e97e414915421051c6c83ec6 1617 main/binary-aarch64/Packages.gz
 SHA1:
- eb2ce0ef3b6e0b71dbf555c0b54e5099c2c30036 920 main/binary-aarch64/Packages
- e1954b04fac3251a1a6266727520f18ea692f19c 519 main/binary-aarch64/Packages.gz
+ a840bcf5f519d1fefb13ed91e8ce8210a89f0f5c 3783 main/binary-aarch64/Packages
+ 5d968f6870baceac857f95bfd5d07c3db5fe5233 1617 main/binary-aarch64/Packages.gz
 SHA256:
- 55f31725d40fbe2d647a9dcf96d3a5aea4c8858563a3f2f2f1ccf93ead3de976 920 main/binary-aarch64/Packages
- e5d2244d9c767ab2fbcb0f198c3db3d93c67ceb50a9436c5623e631020054cdf 519 main/binary-aarch64/Packages.gz
+ 934e852124baf875cfc7e42eac5c7b600b5d036ac3e4679758790e78c89caa9f 3783 main/binary-aarch64/Packages
+ 857f567c1f292bb7b7438a41c4746c4c9454eddd76215d2f348470c2dca01b17 1617 main/binary-aarch64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iJEEARYKADkWIQRtOn8rO02WG6HKJd+w48+fI1SkWgUCaod86RsUgAAAAAAEAA5t
-YW51MiwyLjUrMS4xMiwzLDIACgkQsOPPnyNUpFr9TwEAshx/2xZx1/fhoKqWTcFd
-oPPHOYLR3BugMC1jHEaIP5UA/36UWwMadSLZLI5vpIaCdoC3ZQ/whCWbRBz/eya+
-SQIB
-=kJrk
+iJEEARYKADkWIQSIQgrwDg208PLPbxQjxf7SyYIjhAUCasOe8hsUgAAAAAAEAA5t
+YW51MiwyLjUrMS4xMiwzLDIACgkQI8X+0smCI4QRWgD+OYs8npPygRCIFr3YobCf
+fbYjDrd7XKdw6vcb42ThIz0A/0xY0zvd3jDszDHbpP1d5srRIU9fZARshxLQMCqJ
+JhkD
+=7Y2i
 -----END PGP SIGNATURE-----

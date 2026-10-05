@@ -5,7 +5,7 @@ REPO_URL="https://exfurr-bash.github.io/pre-bin"
 PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
 KEY_PATH="$PREFIX/etc/apt/pre-bin.asc"
 SOURCES_FILE="$PREFIX/etc/apt/sources.list.d/pre-bin.list"
-FINGERPRINT="6D3A7F2B3B4D961BA1CA25DFB0E3CF9F2354A45A"
+FINGERPRINT="88420AF00E0DB4F0F2CF6F1423C5FED2C9822384"
 SUITE="testing"
 COMPONENT="main"
 

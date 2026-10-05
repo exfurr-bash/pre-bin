@@ -6,13 +6,13 @@ Version: 1.0
 Architectures: aarch64
 Components: main
 Description: Repositorio APT pre-bin (Termux)
-Date: Thu, 20 Aug 2026 04:27:34 +0000
+Date: Mon, 05 Oct 2026 12:53:44 +0000
 MD5Sum:
  bbae9fb2c524ac43b07533b59b86d8a0 3783 main/binary-aarch64/Packages
- 66d3779d51edc09602a725dfe26e18c2 1617 main/binary-aarch64/Packages.gz
+ a604fd65e97e414915421051c6c83ec6 1617 main/binary-aarch64/Packages.gz
 SHA1:
  a840bcf5f519d1fefb13ed91e8ce8210a89f0f5c 3783 main/binary-aarch64/Packages
- e527f3e2263aceeee040b722631494726af905e0 1617 main/binary-aarch64/Packages.gz
+ 5d968f6870baceac857f95bfd5d07c3db5fe5233 1617 main/binary-aarch64/Packages.gz
 SHA256:
  934e852124baf875cfc7e42eac5c7b600b5d036ac3e4679758790e78c89caa9f 3783 main/binary-aarch64/Packages
- f205ee2e238ef4248d0b78a5aa6a45714a97afacfb235a12b3f71b80ec0d6961 1617 main/binary-aarch64/Packages.gz
+ 857f567c1f292bb7b7438a41c4746c4c9454eddd76215d2f348470c2dca01b17 1617 main/binary-aarch64/Packages.gz
