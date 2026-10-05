@@ -8,11 +8,11 @@ Components: main
 Description: Repositorio APT pre-bin (Termux)
 Date: Thu, 20 Aug 2026 04:27:34 +0000
 MD5Sum:
- a89a193566a3cf176442a04fb69d9e19 920 main/binary-aarch64/Packages
- 7d042eb9bde32b9688ac774fae4a4f8b 519 main/binary-aarch64/Packages.gz
+ bbae9fb2c524ac43b07533b59b86d8a0 3783 main/binary-aarch64/Packages
+ 66d3779d51edc09602a725dfe26e18c2 1617 main/binary-aarch64/Packages.gz
 SHA1:
- eb2ce0ef3b6e0b71dbf555c0b54e5099c2c30036 920 main/binary-aarch64/Packages
- e1954b04fac3251a1a6266727520f18ea692f19c 519 main/binary-aarch64/Packages.gz
+ a840bcf5f519d1fefb13ed91e8ce8210a89f0f5c 3783 main/binary-aarch64/Packages
+ e527f3e2263aceeee040b722631494726af905e0 1617 main/binary-aarch64/Packages.gz
 SHA256:
- 55f31725d40fbe2d647a9dcf96d3a5aea4c8858563a3f2f2f1ccf93ead3de976 920 main/binary-aarch64/Packages
- e5d2244d9c767ab2fbcb0f198c3db3d93c67ceb50a9436c5623e631020054cdf 519 main/binary-aarch64/Packages.gz
+ 934e852124baf875cfc7e42eac5c7b600b5d036ac3e4679758790e78c89caa9f 3783 main/binary-aarch64/Packages
+ f205ee2e238ef4248d0b78a5aa6a45714a97afacfb235a12b3f71b80ec0d6961 1617 main/binary-aarch64/Packages.gz

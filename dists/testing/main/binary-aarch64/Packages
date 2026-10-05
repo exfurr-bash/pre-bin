@@ -1,16 +1,31 @@
-Package: ocaml
+Package: lactase
 Architecture: aarch64
-Version: 5.5.0
+Version: 0.1.0-1
 Maintainer: @termux
-Depends: ncurses, zlib, clang, binutils, libandroid-shmem
-Installed-Size: 220167
-Description: The core OCaml system: compilers, runtime system, base libraries
-Homepage: https://ocaml.org
-Filename: pool/main/ocaml/ocaml_5.5.0_aarch64.deb
-Size: 85512388
-MD5sum: 1a0110440478d3fd66635eccf80a4646
-SHA1: 8ba75d05c547814b52d75d16e26694ebeb5e6690
-SHA256: 20b586fbcb544e42ccca379fc450689facae722615d4359424b9aabe798b6dc8
+Depends: libx11, libxcomposite, libxdamage, libxfixes, libxrender, libxext, libglvnd, mesa, milk
+Installed-Size: 916
+Description: lactase compositor for the milk desktop (shadows, animations, transparency, blur)
+Homepage: https://github.com/mirvoxtm/lactase
+Filename: pool/main/lactase/lactase_0.1.0-1_aarch64.deb
+Size: 277932
+MD5sum: 0f221cd43541a1eec5176aae60728a91
+SHA1: 2ac292f675792d4c6c336c72ee2ac1946615f04b
+SHA256: 1f2bd75c648702c011b14d97bc582a85c2bde184d0ce41ad6c35711a4623fee3
+
+Package: milk
+Architecture: aarch64
+Version: 1.1.0-2
+Maintainer: @termux
+Depends: libx11, libxft, libxrandr, libxfixes, libxext, fontconfig, freetype, zlib, dbus, termux-auth, feh, librsvg, imagemagick, xdg-user-dirs, xdg-utils, libnotify, glib, pulseaudio, termux-api, ttf-dejavu, ttf-nerd-fonts-symbols, termux-x11-nightly, xorg-xprop, xorg-setxkbmap
+Suggests: rofi, alacritty, matugen, qt5ct, qt6ct, xclip, flameshot, xorg-xrandr
+Installed-Size: 7006
+Description: A lightweight, self-contained X11 desktop: window manager, bar, notifications and per-area wallpapers in one program
+Homepage: https://github.com/mirvoxtm/milk
+Filename: pool/main/milk/milk_1.1.0-2_aarch64.deb
+Size: 1884788
+MD5sum: fa8f2be6682b24d11881f983d3d35197
+SHA1: e67be897ce4d56275ec9493da3f15891be080d2b
+SHA256: 133b9a167aea59f0ce4bb2e5433bd733333924b2f435673085ddf5ce4b89ce1d
 
 Package: ocaml-static
 Architecture: aarch64
@@ -25,4 +40,60 @@ Size: 7746684
 MD5sum: 938ee9637231ee46d82a49dfb968554a
 SHA1: e7577b425f65cfc7fdb3060b824f56ba29dc0338
 SHA256: b2fe54bf2ed73d9122cd543dde3caa5e96d6ed8a95740d346b1082d57c8768fc
+
+Package: ocaml
+Architecture: aarch64
+Version: 5.5.0
+Maintainer: @termux
+Depends: ncurses, zlib, clang, binutils, libandroid-shmem
+Installed-Size: 220167
+Description: The core OCaml system: compilers, runtime system, base libraries
+Homepage: https://ocaml.org
+Filename: pool/main/ocaml/ocaml_5.5.0_aarch64.deb
+Size: 85512388
+MD5sum: 1a0110440478d3fd66635eccf80a4646
+SHA1: 8ba75d05c547814b52d75d16e26694ebeb5e6690
+SHA256: 20b586fbcb544e42ccca379fc450689facae722615d4359424b9aabe798b6dc8
+
+Package: odin-static
+Architecture: aarch64
+Version: 2026.09-1
+Maintainer: @termux
+Depends: odin (= 2026.09-1)
+Installed-Size: 20883
+Description: Static libraries for odin
+Homepage: https://odin-lang.org/
+Filename: pool/main/odin-static/odin-static_2026.09-1_aarch64.deb
+Size: 4763504
+MD5sum: e99f82cf0d653e8ad41b82dac09a66a9
+SHA1: 9f730a90e83d0b46677be1bb4455bf10bc7ec21e
+SHA256: 7feae0143266ffd7cda4acb5a482c6c7b45cfe46a3d30faf40875a0e66f2d24f
+
+Package: odin
+Architecture: aarch64
+Version: 2026.09-1
+Maintainer: @termux
+Installed-Size: 174758
+Description: The Odin programming language compiler
+Homepage: https://odin-lang.org/
+Filename: pool/main/odin/odin_2026.09-1_aarch64.deb
+Size: 37197384
+MD5sum: 9f6235986be7c381c3a77baa0739e0a3
+SHA1: 87b852373aacf722bc75bd03b666e9a4a0769763
+SHA256: 7a1f1b9d3339967514feedf991e6482422a072b56c81d5bef5441710db7280c5
+
+Package: spoil
+Architecture: aarch64
+Version: 1.0.0-2
+Maintainer: @termux
+Depends: libx11, libxft, libxrandr, libxfixes, libxext, fontconfig, freetype, zlib, bsdtar, zip, unzip, p7zip, milk
+Suggests: alacritty, mpv, ffmpegthumbnailer, ffmpeg
+Installed-Size: 1216
+Description: Spoil file manager for the milk desktop
+Homepage: https://github.com/mirvoxtm/spoil
+Filename: pool/main/spoil/spoil_1.0.0-2_aarch64.deb
+Size: 377020
+MD5sum: 19a6ae702018818ff32e8250ced3f9c8
+SHA1: 41b52444639bb315c3e3d71d7c62a787d14e3e29
+SHA256: 7838c1267d4521bb76c0c5ec3c8084adf6826ce3436f4adfdf2528a5fd721544
 
